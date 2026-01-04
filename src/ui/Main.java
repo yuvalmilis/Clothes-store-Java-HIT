@@ -14,7 +14,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("===== תחילת בדיקת מערכת ניהול רשת חנויות =====");
 
-        // אתחול שירותים (Service)
+        // אתחול שירותים (Services)
         EmployeeService employeeService = new EmployeeService(new EmployeeRepository());
         CustomerService customerService = new CustomerService(new CustomerRepository());
 

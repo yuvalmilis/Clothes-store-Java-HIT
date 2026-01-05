@@ -1,10 +1,7 @@
 package domain.customers;
 
-import java.io.Serializable;
-
 // מחלקת הבסיס - כל סוגי הלקוחות ירשו ממנה
-public abstract class Customer implements Serializable {
-    private static final long serialVersionUID = 1L;
+public abstract class Customer {
 
     protected String id;
     protected String name;
@@ -51,6 +48,11 @@ public abstract class Customer implements Serializable {
     public String getId() { return id; }
     public String getName() { return name; }
     public String getPhone() { return phone; }
+
+    // הדרכים השונות לזהות את הלקוח
+    public boolean compare(String id) {
+        return this.id.equals(id);
+    }
 
     @Override
     public String toString() {

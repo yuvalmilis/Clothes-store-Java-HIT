@@ -57,11 +57,11 @@ public class Main {
 
         // מחיקת עובד
         System.out.println("מוחק עובד E002...");
-        employeeService.deleteEmployee("E002");
+        employeeService.removeEmployee("E002");
 
         // מחיקת לקוח
         System.out.println("מוחק לקוח C100...");
-        customerService.deleteCustomer("C100");
+        customerService.removeCustomer("C100");
 
         // --- הצגת תמונת מצב סופית ---
         System.out.println("\n--- תמונת מצב סופית במערכת ---");

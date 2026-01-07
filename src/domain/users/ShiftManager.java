@@ -4,8 +4,8 @@ public class ShiftManager extends Employee {
 
     private String shift;
 
-    public ShiftManager(String id, String name, String phone, String shift) {
-        super(id, name, phone);
+    public ShiftManager(String id, String branchId, String name, String phone, String shift) {
+        super(id, branchId, name, phone);
         this.shift = shift;
     }
 
@@ -28,6 +28,7 @@ public class ShiftManager extends Employee {
     public String toString() {
         return "ShiftManager{" +
                 "id='" + id + '\'' +
+                ", branchId='" + getBranchId() + '\'' +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", shift='" + shift + '\'' +

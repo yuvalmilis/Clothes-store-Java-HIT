@@ -4,8 +4,8 @@ public class Seller extends Employee {
 
     private String department;
 
-    public Seller(String id, String name, String phone, String department) {
-        super(id, name, phone);
+    public Seller(String id, String branchId, String name, String phone, String department) {
+        super(id, branchId, name, phone);
         this.department = department;
     }
 
@@ -28,6 +28,7 @@ public class Seller extends Employee {
     public String toString() {
         return "Seller{" +
                 "id='" + id + '\'' +
+                ", branchId='" + getBranchId() + '\'' +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
                 ", department='" + department + '\'' +

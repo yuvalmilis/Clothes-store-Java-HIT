@@ -2,11 +2,8 @@ package domain.users;
 
 public class Cashier extends Employee {
 
-    private String branchId;
-
-    public Cashier(String id, String name, String phone, String branchId) {
-        super(id, name, phone);
-        this.branchId = branchId;
+    public Cashier(String id, String branchId, String name, String phone) {
+        super(id, branchId, name, phone);
     }
 
     @Override
@@ -16,15 +13,16 @@ public class Cashier extends Employee {
 
     @Override
     protected String getExtra() {
-        return branchId;
+        return getBranchId();
     }
+
     @Override
     public String toString() {
         return "Cashier{" +
                 "id='" + id + '\'' +
+                ", branchId='" + getBranchId() + '\'' +
                 ", name='" + name + '\'' +
                 ", phone='" + phone + '\'' +
-                ", branchId='" + branchId + '\'' +
                 '}';
     }
 

@@ -1,16 +1,34 @@
 package ui;
 
-import com.google.gson.reflect.TypeToken;
-import repository.Paths;
-import domain.users.*;
-import domain.customers.*;
-import repository.Repository;
-import service.EmployeeService;
-import service.CustomerService;
+import domain.users.Cashier;
+import server.Client;
+
+import java.io.*;
 
 public class Main {
 
     public static void main(String[] args) {
+        Cashier e = new Cashier("E001", "סניף חולון", "יוסי כהן", "050-1111111");
+        Client c = new Client(e, "localhost", 5001);
+        try {
+            c.connect();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        c.sendMessage("Hi this is a test from me!");
+        try {
+            c.read();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        try {
+            c.disconnect();
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+    }
+
+    /*public static void main(String[] args) {
         System.out.println("===== תחילת בדיקת מערכת ניהול רשת חנויות =====");
 
         // אתחול שירותים (Services)
@@ -72,5 +90,5 @@ public class Main {
         customerService.getAllEntities().forEach(System.out::println);
 
         System.out.println("\n===== הבדיקה הסתיימה בהצלחה =====");
-    }
+    }*/
 }
